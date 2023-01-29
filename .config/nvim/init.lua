@@ -1,4 +1,4 @@
-require "plugins"
+require "packer"
 require "treesitter"
 
 -- Nvim Tree
