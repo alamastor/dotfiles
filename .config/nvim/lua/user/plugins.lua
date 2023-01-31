@@ -19,4 +19,9 @@ return require('packer').startup(function(use)
 
   -- Gruvbox
   use { "ellisonleao/gruvbox.nvim" }
+
+  -- LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
 end)
