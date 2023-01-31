@@ -11,7 +11,6 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.mouse = "a" -- enable mouse
 vim.opt.showtabline = 0 -- always show tabs
-vim.opt.smartindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
