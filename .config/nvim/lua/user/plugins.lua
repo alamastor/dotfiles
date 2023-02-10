@@ -30,4 +30,7 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim"
     }
   }
+
+  -- Minimap
+  use "wfxr/minimap.vim"
 end)
