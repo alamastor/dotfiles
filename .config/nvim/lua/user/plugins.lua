@@ -33,4 +33,7 @@ return require('packer').startup(function(use)
 
   -- Minimap
   use "wfxr/minimap.vim"
+
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
 end)
