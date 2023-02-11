@@ -71,7 +71,6 @@ ZSH_THEME="kennethreitz"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,8 +103,11 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# NVM
+alias load_nvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+alias node='unalias node npm && load_nvm && node'
+alias npm='unalias node npm && load_nvm && npm'
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 function awsauth { ~/Library/aws-auth-bash/auth.sh "$@"; [[ -r "$HOME/.aws/sessiontoken" ]] && . "$HOME/.aws/sessiontoken"; }
