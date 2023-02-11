@@ -1,6 +1,8 @@
+require "user/impatient"
 require "user/keymaps"
 require "user/packer"
 
+require "user/treesitter"
 require "user/treesitter"
 require "user/nvim-tree"
 require "user/theme"

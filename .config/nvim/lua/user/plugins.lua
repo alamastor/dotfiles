@@ -17,6 +17,9 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  -- Fast vim boot
+  use "lewis6991/impatient.nvim"
+
   -- Gruvbox
   use { "ellisonleao/gruvbox.nvim" }
 
