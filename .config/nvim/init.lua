@@ -11,6 +11,7 @@ require "user/minimap"
 require "user/toggleterm"
 require "user/cmp"
 require "user/autocommands"
+require "user/lualine"
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
