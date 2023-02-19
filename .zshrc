@@ -123,5 +123,3 @@ export PYTHONDONTWRITEBYTECODE=1
 export PATH="$PATH:/Users/amckelvie/Library/miniconda/bin"
 
 export SHELL=/bin/zsh
-
-source /Users/amckelvie/.docker/init-zsh.sh || true # Added by Docker Desktop
