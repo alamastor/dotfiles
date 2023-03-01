@@ -3,7 +3,7 @@
 
 [core]
   pager = delta
-	editor = nvr --remote-wait-silent
+  editor = nvr --remote-wait-silent
 
 [interactive]
   diffFilter = delta --color-only
@@ -19,16 +19,13 @@
   colorMoved = default
 
 [push]
-	default = current
-
-[commit]
-	gpgsign = true
+  default = current
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 
 [include]
   path = .gitconfig.local
