@@ -1,5 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -113,9 +112,6 @@ alias npm='unalias node npm && load_nvm && npm'
 function awsauth { ~/Library/aws-auth-bash/auth.sh "$@"; [[ -r "$HOME/.aws/sessiontoken" ]] && . "$HOME/.aws/sessiontoken"; }
 
 export PATH="$HOME/.poetry/bin:$PATH"
-
-# Created by `pipx` on 2022-05-14 05:51:42
-export PATH="$PATH:/Users/amckelvie/.local/bin"
 
 export PYTHONBREAKPOINT=pudb.set_trace
 export PYTHONDONTWRITEBYTECODE=1
