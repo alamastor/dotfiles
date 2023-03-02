@@ -1,0 +1,2 @@
+# nvim
+- Rust completions
