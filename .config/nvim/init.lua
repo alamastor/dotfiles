@@ -3,7 +3,6 @@ require "user/keymaps"
 require "user/packer"
 
 require "user/treesitter"
-require "user/treesitter"
 require "user/nvim-tree"
 require "user/theme"
 require "user/lsp"
@@ -12,6 +11,7 @@ require "user/toggleterm"
 require "user/cmp"
 require "user/autocommands"
 require "user/lualine"
+require "user/trouble"
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
