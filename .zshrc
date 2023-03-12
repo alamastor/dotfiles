@@ -64,7 +64,7 @@ ZSH_THEME="kennethreitz"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-export NVM_LAZY=1
+zstyle ':omz:plugins:nvm' lazy yes
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
