@@ -89,6 +89,7 @@ cmp.setup {
     { name = "nvim_lua" },
     { name = "buffer" },
     { name = "path" },
+    { name = "luasnip" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -101,4 +102,9 @@ cmp.setup {
   experimental = {
     ghost_text = true,
   },
+  snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
+    },
 }
