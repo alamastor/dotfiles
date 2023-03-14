@@ -60,4 +60,7 @@ return require('packer').startup(function(use)
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
   }
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
 end)
