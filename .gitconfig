@@ -27,5 +27,13 @@
   process = git-lfs filter-process
   required = true
 
+[alias]
+	lo = log --all --decorate --oneline --graph
+	st = status
+	ci = commit
+	sw = switch
+	br = branch
+	co = checkout
+
 [include]
   path = .gitconfig.local
