@@ -63,4 +63,9 @@ return require('packer').startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  -- DAP
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+  use "mfussenegger/nvim-dap-python"
 end)

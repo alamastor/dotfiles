@@ -13,6 +13,7 @@ require "user/autocommands"
 require "user/lualine"
 require "user/trouble"
 require "user/gitsigns"
+require "user/dap"
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
