@@ -15,6 +15,7 @@ require "user/trouble"
 require "user/gitsigns"
 require "user/dap"
 require "user/rust-tools"
+require "user/autopairs"
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
