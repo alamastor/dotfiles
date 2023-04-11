@@ -38,3 +38,5 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.guifont = "monospace:h17"
+vim.opt.list = true
+vim.opt.listchars = "tab:>-,trail:·,extends:,precedes:"
