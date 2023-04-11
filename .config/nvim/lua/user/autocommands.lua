@@ -14,3 +14,6 @@ vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
 vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=hcl]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
+
+-- Use tabs in makefiles
+vim.cmd([[autocmd FileType make set noexpandtab shiftwidth=4 tabstop=4]])
