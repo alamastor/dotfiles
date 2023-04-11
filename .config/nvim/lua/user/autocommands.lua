@@ -17,3 +17,12 @@ vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=jso
 
 -- Use tabs in makefiles
 vim.cmd([[autocmd FileType make set noexpandtab shiftwidth=4 tabstop=4]])
+
+-- Wrap Markdown and Git commits
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "gitcommit", "markdown" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+  end,
+})
