@@ -86,6 +86,13 @@ if [ "$SHLVL" = 1 ]; then
   eval "$(pyenv init -)"
 fi
 
+# FZF
+system_type=$(uname -s)
+if [ "${system_type}" = "Linux" ]; then
+  . /usr/share/fzf/key-bindings.zsh
+  . /usr/share/fzf/completion.zsh
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
