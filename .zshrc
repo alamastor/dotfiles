@@ -1,4 +1,6 @@
-export PATH=$HOME/.local/bin:$PATH
+if [ "$SHLVL" = 1 ]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,8 +81,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+if [ "$SHLVL" = 1 ]; then
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -110,11 +114,15 @@ alias v=nvim
 
 function awsauth { ~/Library/aws-auth-bash/auth.sh "$@"; [[ -r "$HOME/.aws/sessiontoken" ]] && . "$HOME/.aws/sessiontoken"; }
 
-export PATH="$HOME/.poetry/bin:$PATH"
+if [ "$SHLVL" = 1 ]; then
+  export PATH="$HOME/.poetry/bin:$PATH"
+fi
 
 export PYTHONBREAKPOINT=pudb.set_trace
 export PYTHONDONTWRITEBYTECODE=1
 
-export PATH="$PATH:/Users/amckelvie/Library/miniconda/bin"
+if [ "$SHLVL" = 1 ]; then
+  export PATH="$PATH:/Users/amckelvie/Library/miniconda/bin"
+fi
 
 export SHELL=/bin/zsh
