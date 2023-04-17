@@ -23,13 +23,16 @@ return {
 	code_action = function()
 		vim.cmd("lua vim.lsp.buf.code_action()")
 	end,
-	next_diagnostic = function ()
+	next_diagnostic = function()
 		vim.cmd("lua vim.diagnostic.goto_next({buffer=0})")
 	end,
-	prev_diagnostic = function ()
+	prev_diagnostic = function()
 		vim.cmd("lua vim.diagnostic.goto_prev({buffer=0})")
 	end,
-	rename = function ()
+	rename = function()
 		vim.cmd("lua vim.lsp.buf.rename()")
+	end,
+	signature_help = function()
+		vim.cmd("lua vim.lsp.buf.signature_help()")
 	end,
 }

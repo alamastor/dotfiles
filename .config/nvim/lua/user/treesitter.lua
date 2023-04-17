@@ -9,11 +9,21 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "comment", "rust", "toml", "hcl" },
+	ensure_installed = {
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"bash",
+		"python",
+		"comment",
+		"rust",
+		"toml",
+		"hcl",
+		"java",
+	},
 	-- ensure_installed = "all", -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = { "css" }, -- list of language that will be disabled
@@ -22,7 +32,6 @@ configs.setup({
 		enable = true,
 	},
 	indent = { enable = true, disable = { "python", "css" } },
-
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,

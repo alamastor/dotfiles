@@ -84,6 +84,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [ "$SHLVL" = 1 ]; then
   command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
+
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
 fi
 
 # FZF
