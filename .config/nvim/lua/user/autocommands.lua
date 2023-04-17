@@ -15,8 +15,8 @@ vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]
 vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=hcl]])
 vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])
 
--- Use tabs in makefiles
-vim.cmd([[autocmd FileType make set noexpandtab shiftwidth=4 tabstop=4]])
+-- Use tabs in in some filetypes
+vim.cmd([[autocmd FileType make,lua set noexpandtab shiftwidth=4 tabstop=4]])
 
 -- Wrap Markdown and Git commits
 vim.api.nvim_create_autocmd({ "FileType" }, {
