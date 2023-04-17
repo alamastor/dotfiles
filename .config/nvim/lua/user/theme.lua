@@ -1,6 +1,6 @@
 -- Gruvbox Theme
 vim.o.background = "dark"
 require("gruvbox").setup({
-  contrast = "hard"
+	contrast = "hard",
 })
 vim.cmd([[colorscheme gruvbox]])

@@ -1,21 +1,21 @@
-require "user/impatient"
-require "user/keymaps"
-require "user/packer"
+require("user/impatient")
+require("user/keymaps")
+require("user/packer")
 
-require "user/treesitter"
-require "user/nvim-tree"
-require "user/theme"
-require "user/lsp"
-require "user/minimap"
-require "user/toggleterm"
-require "user/cmp"
-require "user/autocommands"
-require "user/lualine"
-require "user/trouble"
-require "user/gitsigns"
-require "user/dap"
-require "user/rust-tools"
-require "user/autopairs"
+require("user/treesitter")
+require("user/nvim-tree")
+require("user/theme")
+require("user/lsp")
+require("user/minimap")
+require("user/toggleterm")
+require("user/cmp")
+require("user/autocommands")
+require("user/lualine")
+require("user/trouble")
+require("user/gitsigns")
+require("user/dap")
+require("user/rust-tools")
+require("user/autopairs")
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard

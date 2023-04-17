@@ -1,11 +1,11 @@
 -- Allow :wq to close git vim windows
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = {"gitcommit", "gitrebase", "gitconfig"},
-  callback = function()
-    vim.cmd [[
+	pattern = { "gitcommit", "gitrebase", "gitconfig" },
+	callback = function()
+		vim.cmd([[
       set bufhidden=delete
-    ]]
-  end,
+    ]])
+	end,
 })
 
 -- Custom file associations
@@ -20,9 +20,9 @@ vim.cmd([[autocmd FileType make,lua set noexpandtab shiftwidth=4 tabstop=4]])
 
 -- Wrap Markdown and Git commits
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "gitcommit", "markdown" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-  end,
+	pattern = { "gitcommit", "markdown" },
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.spell = true
+	end,
 })

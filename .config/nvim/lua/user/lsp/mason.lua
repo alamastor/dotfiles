@@ -1,15 +1,15 @@
 local servers = {
-  "lua_ls",
-  "pyright",
+	"lua_ls",
+	"pyright",
 }
 
 require("user.mason")
 require("mason-lspconfig").setup({
-  ensure_installed = servers,
-  automatic_installation = true,
+	ensure_installed = servers,
+	automatic_installation = true,
 })
 
-local lspconfig = require"lspconfig"
+local lspconfig = require("lspconfig")
 
 local opts = {}
 
