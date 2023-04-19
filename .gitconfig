@@ -38,6 +38,7 @@
   br = branch
   co = checkout
   fp = push --force
+  rb = rebase
 
 [include]
   path = .gitconfig.local
