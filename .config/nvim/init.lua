@@ -1,4 +1,5 @@
 require("user/impatient")
+require("user/globals")
 require("user/keymaps")
 require("user/packer")
 
@@ -39,4 +40,9 @@ vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.guifont = "monospace:h17"
 vim.opt.list = true
-vim.opt.listchars = "tab:>-,trail:·,extends:,precedes:"
+vim.opt.listchars = {
+	tab = ">-",
+	trail = "·",
+	extends = "",
+	precedes= ""
+}
