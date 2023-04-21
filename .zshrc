@@ -91,6 +91,8 @@ system_type=$(uname -s)
 if [ "${system_type}" = "Linux" ]; then
   . /usr/share/fzf/key-bindings.zsh
   . /usr/share/fzf/completion.zsh
+elif [ "${system_type}" = "Darwin" ]; then
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
