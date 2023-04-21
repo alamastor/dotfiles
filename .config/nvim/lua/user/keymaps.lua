@@ -1,11 +1,19 @@
+local M = {}
 -- Shorten function name
 local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
---Remap space as leader key
+-- Remap space as leader key
+-- Needs to be done before using leader in any maps!
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
+
+M.reload = function()
+	R("user.keymaps")
+	print("Keymaps reloaded.")
+end
+keymap("n", "<leader>rr", "<cmd>lua require('user.keymaps').reload()<cr>")
 
 -- Format file --
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", {})
@@ -25,3 +33,5 @@ keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>lua require('dap-python').test_method()<cr>", opts)
 keymap("v", "<leader>ds", "<cmd>lua require('dap-python').debug_selection()<cr>", opts)
+
+return M
