@@ -10,16 +10,18 @@ end
 
 configs.setup({
 	ensure_installed = {
+		"bash",
+		"comment",
+		"hcl",
+		"java",
 		"lua",
 		"markdown",
 		"markdown_inline",
-		"bash",
 		"python",
-		"comment",
+		"regex",
 		"rust",
 		"toml",
-		"hcl",
-		"java",
+		"vim",
 	},
 	-- ensure_installed = "all", -- one of "all" or a list of languages
 	ignore_install = { "" }, -- List of parsers to ignore installing

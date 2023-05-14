@@ -14,7 +14,7 @@ return require("packer").startup(function(use)
 		requires = {
 			"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		},
-		tag = "nightly", -- optional, updated every week. (see issue #1193)
+		tag = "nightly",              -- optional, updated every week. (see issue #1193)
 	})
 
 	-- Fast vim boot
@@ -49,7 +49,7 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip")
 
 	-- Snippets
-	use("L3MON4D3/LuaSnip") -- Snippet engine
+	use("L3MON4D3/LuaSnip")            -- Snippet engine
 	use("rafamadriz/friendly-snippets") -- A collection of snippets
 
 	-- Lualine
@@ -84,4 +84,17 @@ return require("packer").startup(function(use)
 
 	-- Java
 	use("mfussenegger/nvim-jdtls")
+
+	-- Noice UI
+	use({
+		"folke/noice.nvim",
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		}
+	})
 end)
