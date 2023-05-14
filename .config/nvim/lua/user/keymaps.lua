@@ -71,4 +71,6 @@ keymap("n", "<leader>lem", remap("extract_method"), { noremap = true, silent = t
 keymap("n", "<leader>li", "<cmd>LspInfo<cr>", { noremap = true, silent = true })
 keymap("n", "<leader>lI", "<cmd>Mason<cr>", { noremap = true, silent = true })
 
+keymap("n", "<leader>cn", "<cmd>Colorscheme next<cr>", { noremap = true, silent = true })
+
 return M
