@@ -35,7 +35,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Minimap
-	use("wfxr/minimap.vim")
+	use("echasnovski/mini.nvim")
 
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
