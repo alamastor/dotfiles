@@ -98,4 +98,12 @@ return require("packer").startup(function(use)
 			"rcarriga/nvim-notify",
 		}
 	})
+
+	-- File renames
+	use {
+		"antosha417/nvim-lsp-file-operations", requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "kyazdani42/nvim-tree.lua" },
+		}
+	}
 end)
