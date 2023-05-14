@@ -18,6 +18,7 @@ require("user/dap")
 require("user/rust-tools")
 require("user/autopairs")
 require("user/noice")
+require("user/telescope")
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
