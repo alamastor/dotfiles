@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+# Use Nvim as pager, source https://github.com/kovidgoyal/kitty/issues/719#issuecomment-952039731
 set -eu
+
+if [ $(uname -s) = "Darwin" ]; then
+  NVIM_CMD=/opt/homebrew/bin/nvim
+else
+  NVIM_CMD=nvim
+fi
 
 if [ "$#" -eq 3 ]; then
     INPUT_LINE_NUMBER=${1:-0}
@@ -10,7 +17,7 @@ else
     AUTOCMD_TERMCLOSE_CMD="normal G"
 fi
 
-exec nvim 63<&0 0</dev/null \
+exec ${NVIM_CMD} 63<&0 0</dev/null \
     -u NONE \
     -c "map <silent> q :qa!<CR>" \
     -c "set shell=bash scrollback=100000 termguicolors laststatus=0 clipboard+=unnamedplus" \
