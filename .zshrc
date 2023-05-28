@@ -83,12 +83,12 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PYENV_ROOT="$HOME/.pyenv"
 if [ "$SHLVL" = 1 ]; then
-  if [ $(command -v pyenv >/dev/null) ]; then
+  if command -v pyenv >/dev/null; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
   fi
 
-  if [ $(command -v jenv >/dev/null) ]; then
+  if command -v jenv >/dev/null; then
     export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
   fi
