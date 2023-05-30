@@ -1,8 +1,7 @@
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
-
-	-- Nvim Treesitter
+-- Nvim Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -20,8 +19,11 @@ return require("packer").startup(function(use)
 	-- Fast vim boot
 	use("lewis6991/impatient.nvim")
 
-	-- Gruvbox
+	-- Colorschemes
 	use({ "ellisonleao/gruvbox.nvim" })
+	use({ "zanglg/nova.nvim"})
+	use({ "tjdevries/colorbuddy.nvim" })
+	use({ "bbenzikry/snazzybuddy.nvim" })
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
