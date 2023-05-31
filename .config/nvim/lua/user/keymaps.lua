@@ -73,4 +73,10 @@ keymap("n", "<leader>lI", "<cmd>Mason<cr>", { noremap = true, silent = true })
 
 keymap("n", "<leader>cn", "<cmd>Colorscheme next<cr>", { noremap = true, silent = true })
 
+-- Telescope
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
+keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true })
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
+
 return M
