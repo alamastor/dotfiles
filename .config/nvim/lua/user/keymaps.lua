@@ -78,5 +78,6 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true })
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
+keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { noremap = true, silent = true })
 
 return M
