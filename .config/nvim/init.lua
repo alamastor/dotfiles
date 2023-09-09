@@ -20,6 +20,7 @@ require("user/autopairs")
 require("user/noice")
 require("user/telescope")
 require("user/lsp-file-operations")
+require("user/nvim-recorder")
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
