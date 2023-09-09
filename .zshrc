@@ -1,6 +1,8 @@
+system_type=$(uname -s)
+
 zmodload zsh/zprof
 if [ "$SHLVL" = 1 ]; then
-  export PATH=$HOME/.local/bin:$PATH
+  export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 fi
 
 # Path to your oh-my-zsh installation.
@@ -82,6 +84,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export PYENV_ROOT="$HOME/.pyenv"
+if [ "${system_type}" = "Linux" ]; then
+  export PATH=$HOME/.pyenv/bin:$PATH
+fi
 if [ "$SHLVL" = 1 ]; then
   if command -v pyenv >/dev/null; then
     export PATH="$PYENV_ROOT/bin:$PATH"
@@ -95,7 +100,6 @@ if [ "$SHLVL" = 1 ]; then
 fi
 
 # FZF
-system_type=$(uname -s)
 if [ "${system_type}" = "Linux" ]; then
   . /usr/share/fzf/key-bindings.zsh
   . /usr/share/fzf/completion.zsh
