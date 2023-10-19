@@ -31,6 +31,7 @@ local kind_icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
+	Copilot = ""
 }
 
 cmp.setup({
@@ -85,6 +86,7 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "copilot"},
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "buffer" },

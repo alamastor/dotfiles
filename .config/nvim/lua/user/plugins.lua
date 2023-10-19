@@ -1,7 +1,7 @@
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
--- Nvim Treesitter
+	-- Nvim Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -21,7 +21,7 @@ return require("packer").startup(function(use)
 
 	-- Colorschemes
 	use({ "ellisonleao/gruvbox.nvim" })
-	use({ "zanglg/nova.nvim"})
+	use({ "zanglg/nova.nvim" })
 	use({ "tjdevries/colorbuddy.nvim" })
 	use({ "bbenzikry/snazzybuddy.nvim" })
 
@@ -83,7 +83,7 @@ return require("packer").startup(function(use)
 		tag = "0.1.1",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	use { "nvim-telescope/telescope-ui-select.nvim" }
+	use({ "nvim-telescope/telescope-ui-select.nvim" })
 
 	-- Java
 	use("mfussenegger/nvim-jdtls")
@@ -98,20 +98,50 @@ return require("packer").startup(function(use)
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
-		}
+		},
 	})
 
 	-- File renames
-	use {
-		"antosha417/nvim-lsp-file-operations", requires = {
+	use({
+		"antosha417/nvim-lsp-file-operations",
+		requires = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "kyazdani42/nvim-tree.lua" },
-		}
-	}
+		},
+	})
 
 	-- macro recorder
-	use {
+	use({
 		"chrisgrieser/nvim-recorder",
 		requires = "rcarriga/nvim-notify", -- optional
-	}
+	})
+
+	-- Copilot
+	use({
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				auto_trigger = true,
+				suggestion = { enabled = false },
+				panel = { enabled = false },
+			})
+		end,
+	})
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup({})
+		end,
+	})
+
+	-- Haskell
+	use({
+		"mrcjkb/haskell-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 end)
