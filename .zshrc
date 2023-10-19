@@ -147,3 +147,6 @@ if [ "$SHLVL" = 1 ]; then
 fi
 
 export SHELL=/bin/zsh
+
+[ -f "$HOME/.local/share/ghcup/env" ] && source "$HOME/.local/share/ghcup/env" # ghcup-env
+
