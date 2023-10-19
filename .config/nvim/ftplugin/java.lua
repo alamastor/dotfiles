@@ -72,7 +72,6 @@ local config = {
 			format = {
 				settings = {
 					url = vim.fn.stdpath("config") .. "/java-fmt.xml",
-					profile = "pandi",
 				}
 			}
 		},
