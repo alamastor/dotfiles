@@ -42,7 +42,7 @@ local config = {
 		"-jar",
 		(
 			vim.fn.stdpath("data")
-			.. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar"
+			.. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
 		),
 		"-configuration",
 		(vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_mac"),
