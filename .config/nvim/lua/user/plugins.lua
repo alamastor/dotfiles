@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
 		requires = {
 			"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		},
-		tag = "nightly",              -- optional, updated every week. (see issue #1193)
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
 
 	-- Fast vim boot
@@ -51,7 +51,7 @@ return require("packer").startup(function(use)
 	use("saadparwaiz1/cmp_luasnip")
 
 	-- Snippets
-	use("L3MON4D3/LuaSnip")            -- Snippet engine
+	use("L3MON4D3/LuaSnip") -- Snippet engine
 	use("rafamadriz/friendly-snippets") -- A collection of snippets
 
 	-- Lualine
@@ -80,7 +80,6 @@ return require("packer").startup(function(use)
 	-- Telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	use({ "nvim-telescope/telescope-ui-select.nvim" })
