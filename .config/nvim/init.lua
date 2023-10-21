@@ -1,4 +1,3 @@
-require("user/impatient")
 require("user/globals")
 require("user/keymaps")
 require("user/packer")
