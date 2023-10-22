@@ -1,20 +1,4 @@
 local M = {}
-local settings = {
-	ui = {
-		border = "none",
-		icons = {
-			package_installed = "◍",
-			package_pending = "◍",
-			package_uninstalled = "◍",
-		},
-	},
-	log_level = vim.log.levels.INFO,
-	max_concurrent_installers = 4,
-}
-
-local mason = require("mason")
-M.mason = mason
-mason.setup(settings)
 
 function M.install_package(package_name)
 	local registry = require("mason-registry")

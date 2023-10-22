@@ -1,30 +1,14 @@
-require("user/globals")
 require("user/keymaps")
-require("user/packer")
+require("user/lazy")
+require("user/globals")
 
-require("user/treesitter")
-require("user/nvim-tree")
 require("user/theme")
 require("user/lsp")
-require("user/minimap")
-require("user/toggleterm")
-require("user/cmp")
 require("user/autocommands")
-require("user/lualine")
-require("user/trouble")
-require("user/gitsigns")
-require("user/dap")
-require("user/rust-tools")
-require("user/autopairs")
-require("user/noice")
-require("user/telescope")
-require("user/lsp-file-operations")
-require("user/nvim-recorder")
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
-vim.opt.fileencoding = "utf-8"
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.mouse = "a" -- enable mouse
 vim.opt.showtabline = 0 -- always show tabs
