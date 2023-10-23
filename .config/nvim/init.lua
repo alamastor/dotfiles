@@ -1,3 +1,4 @@
+vim.g.python3_host_prog = "/Users/amckelvie/.pyenv/versions/py3nvim/bin/python"
 require("user/keymaps")
 require("user/lazy")
 require("user/globals")
@@ -31,7 +32,7 @@ vim.opt.listchars = {
 	tab = ">-",
 	trail = "·",
 	extends = "",
-	precedes= ""
+	precedes = ""
 }
 vim.opt.fillchars = {
 	eob = " "
