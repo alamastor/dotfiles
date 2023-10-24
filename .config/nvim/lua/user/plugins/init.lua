@@ -99,4 +99,7 @@ return {
 
 	-- Vim dev help
 	"folke/neodev.nvim",
+
+	-- Make it transparent
+	"xiyaowong/transparent.nvim",
 }
