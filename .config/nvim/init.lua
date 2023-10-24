@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 require("user/keymaps")
 require("user/lazy")
 require("user/globals")
