@@ -97,9 +97,6 @@ return {
 		end,
 	},
 
-	-- Black formatter
-	"psf/black",
-
 	-- Vim dev help
 	"folke/neodev.nvim",
 }
