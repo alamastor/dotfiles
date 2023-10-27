@@ -95,10 +95,11 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
+		opts = {},
 	},
 
 	-- Vim dev help
-	"folke/neodev.nvim",
+	{ "folke/neodev.nvim", opts = {} },
 
 	-- Make it transparent
 	"xiyaowong/transparent.nvim",
