@@ -1,25 +1,17 @@
 vim.loader.enable()
 
-require("user/keymaps")
-require("user/lazy")
-require("user/globals")
-
-require("user/theme")
-require("user/lsp")
-require("user/autocommands")
-
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
-vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
-vim.opt.hlsearch = true -- highlight all matches on previous search pattern
-vim.opt.mouse = "a" -- enable mouse
-vim.opt.showtabline = 0 -- always show tabs
+vim.opt.conceallevel = 0          -- so that `` is visible in markdown files
+vim.opt.hlsearch = true           -- highlight all matches on previous search pattern
+vim.opt.mouse = "a"               -- enable mouse
+vim.opt.showtabline = 0           -- always show tabs
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
-vim.opt.undofile = true -- enable persistent undo
-vim.opt.updatetime = 300 -- faster completion (4000ms default)
+vim.opt.undofile = true     -- enable persistent undo
+vim.opt.updatetime = 300    -- faster completion (4000ms default)
 vim.opt.writebackup = false -- lock in use files
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
@@ -38,3 +30,11 @@ vim.opt.listchars = {
 vim.opt.fillchars = {
 	eob = " "
 }
+
+require("user/keymaps")
+require("user/lazy")
+require("user/globals")
+
+require("user/theme")
+require("user/lsp")
+require("user/autocommands")
