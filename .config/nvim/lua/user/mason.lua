@@ -1,11 +1,11 @@
 local M = {}
 
 function M.install_package(package_name)
-	local registry = require("mason-registry")
-	if registry.is_installed(package_name) == false then
-		registry.get_package(package_name):install()
-		print("Installed Mason package: " .. package_name)
-	end
+  local registry = require('mason-registry')
+  if registry.is_installed(package_name) == false then
+    registry.get_package(package_name):install()
+    print('Installed Mason package: ' .. package_name)
+  end
 end
 
 return M
