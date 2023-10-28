@@ -1,6 +1,7 @@
 return {
 	format_file = function()
-		vim.cmd("lua vim.lsp.buf.format{ async = true }")
+		-- Guard will fall back to LSP is no formatter is configured
+		vim.cmd("GuardFmt")
 	end,
 	go_to_declaration = function()
 		vim.cmd("lua vim.lsp.buf.declaration()")
