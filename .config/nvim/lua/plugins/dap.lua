@@ -5,7 +5,6 @@ return {
     'mfussenegger/nvim-dap-python',
   },
   config = function()
-    require('user.plugins.dap')
     local dap = require('dap')
     local dapui = require('dapui')
     local mason = require('user.mason')
