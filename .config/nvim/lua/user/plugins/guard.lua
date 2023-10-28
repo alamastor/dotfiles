@@ -7,6 +7,7 @@ return {
     local ft = require('guard.filetype')
 
     ft('python'):fmt('black')
+    ft('lua'):fmt('stylua')
 
     require('guard').setup({
       fmt_on_save = true,
