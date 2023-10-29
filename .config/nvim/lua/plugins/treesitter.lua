@@ -1,37 +1,37 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
   config = function()
-    local status_ok, configs = pcall(require, 'nvim-treesitter.configs')
+    local status_ok, configs = pcall(require, "nvim-treesitter.configs")
     if not status_ok then
-      print('Error loading nvim-treesitter.configs')
+      print("Error loading nvim-treesitter.configs")
     end
     configs.setup({
       ensure_installed = {
-        'bash',
-        'comment',
-        'hcl',
-        'java',
-        'lua',
-        'markdown',
-        'markdown_inline',
-        'python',
-        'regex',
-        'rust',
-        'toml',
-        'vim',
+        "bash",
+        "comment",
+        "hcl",
+        "java",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "regex",
+        "rust",
+        "toml",
+        "vim",
       },
       -- ensure_installed = "all", -- one of "all" or a list of languages
-      ignore_install = { '' }, -- List of parsers to ignore installing
+      ignore_install = { "" }, -- List of parsers to ignore installing
       sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
       highlight = {
         enable = true, -- false will disable the whole extension
-        disable = { 'css' }, -- list of language that will be disabled
+        disable = { "css" }, -- list of language that will be disabled
       },
       autopairs = {
         enable = true,
       },
-      indent = { enable = true, disable = { 'python', 'css' } },
+      indent = { enable = true, disable = { "python", "css" } },
       context_commentstring = {
         enable = true,
         enable_autocmd = false,

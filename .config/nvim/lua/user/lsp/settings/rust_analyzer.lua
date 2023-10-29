@@ -1,11 +1,11 @@
 return {
   settings = {
-    ['rust-analyzer'] = {
+    ["rust-analyzer"] = {
       imports = {
         granularity = {
-          group = 'module',
+          group = "module",
         },
-        prefix = 'self',
+        prefix = "self",
       },
       cargo = {
         buildScripts = {
@@ -16,7 +16,7 @@ return {
         enable = true,
       },
       check = {
-        command = 'clippy',
+        command = "clippy",
       },
     },
   },

@@ -3,8 +3,8 @@ P = function(v)
   return v
 end
 
-if pcall(require, 'plenary') then
-  RELOAD = require('plenary.reload').reload_module
+if pcall(require, "plenary") then
+  RELOAD = require("plenary.reload").reload_module
 
   R = function(name)
     RELOAD(name)
@@ -16,26 +16,26 @@ end
 dump = function(o)
   local entries = 0
 
-  if type(o) == 'table' then
-    local s = '{'
+  if type(o) == "table" then
+    local s = "{"
     for k, v in pairs(o) do
       if entries == 0 then
-        s = s .. ' '
+        s = s .. " "
       end
-      if type(k) ~= 'number' then
+      if type(k) ~= "number" then
         k = '"' .. k .. '"'
       end
       if entries > 0 then
-        s = s .. ', '
+        s = s .. ", "
       end
-      s = s .. '[' .. k .. '] = ' .. dump(v)
+      s = s .. "[" .. k .. "] = " .. dump(v)
       entries = entries + 1
     end
 
     if entries > 0 then
-      s = s .. ' '
+      s = s .. " "
     end
-    return s .. '}'
+    return s .. "}"
   else
     return tostring(o)
   end

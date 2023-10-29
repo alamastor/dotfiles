@@ -1,15 +1,15 @@
 return {
-  'nvimdev/guard.nvim',
+  "nvimdev/guard.nvim",
   dependencies = {
-    'nvimdev/guard-collection',
+    "nvimdev/guard-collection",
   },
   config = function()
-    local ft = require('guard.filetype')
+    local ft = require("guard.filetype")
 
-    ft('python'):fmt('black')
-    ft('lua'):fmt('stylua')
+    ft("python"):fmt("black")
+    ft("lua"):fmt("stylua")
 
-    require('guard').setup({
+    require("guard").setup({
       fmt_on_save = true,
       lsp_as_default_formatter = true,
     })
