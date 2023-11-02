@@ -150,3 +150,4 @@ export SHELL=/bin/zsh
 
 [ -f "$HOME/.local/share/ghcup/env" ] && source "$HOME/.local/share/ghcup/env" # ghcup-env
 
+alias vdev="cd ~/.config/nvim && v init.lua"
