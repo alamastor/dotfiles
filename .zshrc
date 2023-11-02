@@ -128,10 +128,10 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias v=nvim
+alias vdev="cd ~/.config/nvim && v"
+alias zdev="cd && v ~/.zshrc"
 
 function awsauth { ~/Library/aws-auth-bash/auth.sh "$@"; [[ -r "$HOME/.aws/sessiontoken" ]] && . "$HOME/.aws/sessiontoken"; }
 
@@ -149,5 +149,3 @@ fi
 export SHELL=/bin/zsh
 
 [ -f "$HOME/.local/share/ghcup/env" ] && source "$HOME/.local/share/ghcup/env" # ghcup-env
-
-alias vdev="cd ~/.config/nvim && v init.lua"
