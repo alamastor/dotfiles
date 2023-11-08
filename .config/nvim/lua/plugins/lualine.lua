@@ -32,6 +32,15 @@ local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
+local filename = {
+  "filename",
+  path = 1,
+  color = function()
+    local colors = require("colorbuddy").colors
+    return { fg = vim.bo.modified and colors.purple:to_rgb() or colors.white:to_rgb() }
+  end,
+}
+
 return {
   "nvim-lualine/lualine.nvim",
   opts = {
@@ -53,7 +62,7 @@ return {
         spaces,
         "encoding",
         filetype,
-        "filename",
+        filename,
         require("recorder").displaySlots,
         require("recorder").recordingStatus,
       },
