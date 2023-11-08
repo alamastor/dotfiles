@@ -34,8 +34,8 @@ vim.opt.fillchars = {
 }
 
 require("user/keymaps")
-require("user/lazy")
 require("user/globals")
+require("user/lazy")
 
 require("user/theme")
 require("user/lsp")
