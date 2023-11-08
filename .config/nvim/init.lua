@@ -33,9 +33,9 @@ vim.opt.fillchars = {
   eob = " ",
 }
 
-require("user/keymaps")
-require("user/globals")
 require("user/lazy")
+require("user/globals")
+require("user/keymaps")
 
 require("user/theme")
 require("user/lsp")
