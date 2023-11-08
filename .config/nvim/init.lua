@@ -1,6 +1,6 @@
 vim.loader.enable()
 
-vim.g.mapleader = ' ' -- Must do this before anything is mapped with leader
+vim.g.mapleader = " " -- Must do this before anything is mapped with leader
 
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
