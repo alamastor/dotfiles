@@ -113,4 +113,8 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  -- Fugative
+  "tpope/vim-fugitive",
+  "tpope/vim-rhubarb",
 }
