@@ -8,6 +8,7 @@ return {
 
     ft("python"):fmt("black")
     ft("lua"):fmt("stylua")
+    ft("sh"):lint("shellcheck")
 
     require("guard").setup({
       fmt_on_save = true,
