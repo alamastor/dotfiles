@@ -117,4 +117,10 @@ return {
   -- Fugative
   "tpope/vim-fugitive",
   "tpope/vim-rhubarb",
+
+  -- JUSTFILE
+  {
+    "NoahTheDuke/vim-just",
+    ft = { "just" },
+  },
 }
