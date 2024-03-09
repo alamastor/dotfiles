@@ -3,6 +3,7 @@ local servers = {
   "pyright",
   -- "ruff_lsp",
   "rust_analyzer",
+  "jdtls",
 }
 
 require("user.mason")
