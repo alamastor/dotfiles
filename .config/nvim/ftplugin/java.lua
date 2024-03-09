@@ -2,9 +2,7 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = os.getenv("HOME") .. "/.jdtls/" .. project_name
-local dependencies_dir = vim.fn.stdpath("config") .. "/dependencies"
-local jenv_dir = os.getenv("HOME") .. "/.jenv"
-
+vim.cmd("GuardDisable")
 local bundles = {
   vim.fn.glob(
     vim.fn.stdpath("data")
@@ -24,15 +22,15 @@ local config = {
   -- The command that starts the language server
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-    os.getenv("HOME") .. "/.jenv/versions/openjdk64-17.0.7/bin/java",
+    "/opt/homebrew/Cellar/openjdk/21.0.1/libexec/openjdk.jdk/Contents/Home/bin/java",
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
     "-Xmx1g",
-    string.format("-javaagent:%s/lombok.jar", dependencies_dir),
-    string.format("-Xbootclasspath/a:%s", dependencies_dir),
+    -- string.format("-javaagent:%s/lombok.jar", dependencies_dir),
+    -- string.format("-Xbootclasspath/a:%s/lombok.jar", dependencies_dir),
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
     "java.base/java.util=ALL-UNNAMED",
@@ -41,10 +39,10 @@ local config = {
     "-jar",
     (
       vim.fn.stdpath("data")
-      .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar"
+      .. "/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar"
     ),
     "-configuration",
-    (vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_mac"),
+    (vim.fn.stdpath("data") .. "/mason/packages/jdtls/config_mac_arm"),
     "-data",
     workspace_dir,
   },
@@ -60,11 +58,16 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-11",
-            path = (jenv_dir .. "/versions/openjdk64-11.0.19/"),
+            path = "/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home/",
           },
           {
             name = "JavaSE-17",
-            path = (jenv_dir .. "/versions/openjdk64-17.0.7/"),
+            path = "/opt/homebrew/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home/",
+          },
+          {
+            name = "JavaSE-21",
+            path = "/opt/homebrew/Cellar/openjdk/21.0.1/libexec/openjdk.jdk/Contents/Home/",
+            default = true,
           },
         },
       },

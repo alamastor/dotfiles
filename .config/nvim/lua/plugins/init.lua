@@ -16,6 +16,10 @@ return {
           },
           log_level = vim.log.levels.INFO,
           max_concurrent_installers = 4,
+          registries = {
+            "github:nvim-java/mason-registry",
+            "github:mason-org/mason-registry",
+          },
         },
       },
       "williamboman/mason-lspconfig.nvim",
