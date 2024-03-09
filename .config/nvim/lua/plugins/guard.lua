@@ -6,7 +6,7 @@ return {
   config = function()
     local ft = require("guard.filetype")
 
-    ft("python"):fmt("ruff_fix"):append("ruff")
+    ft("python"):fmt("ruff"):lint("ruff")
     ft("lua"):fmt("stylua")
     ft("sh"):lint("shellcheck")
 
