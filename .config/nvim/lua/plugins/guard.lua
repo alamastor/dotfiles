@@ -9,6 +9,7 @@ return {
     ft("python"):fmt("ruff"):lint("ruff")
     ft("lua"):fmt("stylua")
     ft("sh"):lint("shellcheck")
+    ft("java"):fmt({})
 
     require("guard").setup({
       fmt_on_save = true,
