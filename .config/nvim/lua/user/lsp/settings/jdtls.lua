@@ -1,6 +1,13 @@
+print(vim.fn.stdpath("config") .. "/lua/user/lsp/settings/java-fmt.xml")
 return {
   settings = {
     java = {
+      format = {
+        enabled = true,
+        settings = {
+          url = vim.fn.stdpath("config") .. "/lua/user/lsp/settings/java-fmt.xml",
+        },
+      },
       configuration = {
         runtimes = {
           {
