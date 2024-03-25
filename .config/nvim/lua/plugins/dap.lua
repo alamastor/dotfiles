@@ -3,11 +3,17 @@ return {
   dependencies = {
     "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap-python",
+    "nvim-neotest/nvim-nio",
+    "folke/neodev.nvim",
   },
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
     local mason = require("user.mason")
+
+    require("neodev").setup({
+      library = { plugins = { "nvim-dap-ui" }, types = true },
+    })
 
     dapui.setup({
       expand_lines = true,

@@ -30,7 +30,7 @@ return {
   -- Color schemes
   "ellisonleao/gruvbox.nvim",
   "zanglg/nova.nvim",
-  "tjdevries/colorbuddy.nvim",
+  { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
   "bbenzikry/snazzybuddy.nvim",
 
   -- Minimap
