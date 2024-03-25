@@ -1,4 +1,3 @@
-print(vim.fn.stdpath("config") .. "/lua/user/lsp/settings/java-fmt.xml")
 return {
   settings = {
     java = {
