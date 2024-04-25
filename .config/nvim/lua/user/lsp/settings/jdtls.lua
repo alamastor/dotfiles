@@ -1,3 +1,4 @@
+local sdkman_javas = vim.env.HOME .. "/.sdkman/candidates/java/"
 return {
   settings = {
     java = {
@@ -8,18 +9,17 @@ return {
         },
       },
       configuration = {
+        -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
+        -- And search for `interface RuntimeOption`
+        -- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
         runtimes = {
           {
-            name = "JavaSE-11",
-            path = "/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home/",
-          },
-          {
             name = "JavaSE-17",
-            path = "/opt/homebrew/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home/",
+            path = sdkman_javas .. "17.0.11-zulu/",
           },
           {
             name = "JavaSE-21",
-            path = "/opt/homebrew/Cellar/openjdk/21.0.1/libexec/openjdk.jdk/Contents/Home/",
+            path = sdkman_javas .. "21.0.3-zulu/",
             default = true,
           },
         },

@@ -92,11 +92,6 @@ if [ "$SHLVL" = 1 ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
   fi
-
-  if command -v jenv >/dev/null; then
-    export PATH="$HOME/.jenv/bin:$PATH"
-    eval "$(jenv init -)"
-  fi
 fi
 
 # FZF
@@ -149,3 +144,7 @@ fi
 export SHELL=/bin/zsh
 
 [ -f "$HOME/.local/share/ghcup/env" ] && source "$HOME/.local/share/ghcup/env" # ghcup-env
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
