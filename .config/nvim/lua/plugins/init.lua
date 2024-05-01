@@ -1,27 +1,10 @@
+mason_dir = vim.fn.stdpath("data") .. "/mason"
 return {
   -- LSP config
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      {
-        "williamboman/mason.nvim",
-        opts = {
-          ui = {
-            border = "none",
-            icons = {
-              package_installed = "◍",
-              package_pending = "◍",
-              package_uninstalled = "◍",
-            },
-          },
-          log_level = vim.log.levels.INFO,
-          max_concurrent_installers = 4,
-          registries = {
-            "github:nvim-java/mason-registry",
-            "github:mason-org/mason-registry",
-          },
-        },
-      },
+      "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
     },
@@ -56,6 +39,10 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-tree.lua",
     },
+    config = function()
+      print("Setting up file operations")
+      require("lsp-file-operations").setup({ debug = true })
+    end,
   },
 
   -- Macro recorder

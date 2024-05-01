@@ -1,8 +1,6 @@
 local servers = {
   "lua_ls",
   "pyright",
-  "jdtls",
-  "ruff_lsp",
 }
 
 require("user.mason")
