@@ -40,7 +40,6 @@ return {
       "nvim-tree/nvim-tree.lua",
     },
     config = function()
-      print("Setting up file operations")
       require("lsp-file-operations").setup({ debug = true })
     end,
   },
@@ -113,5 +112,32 @@ return {
   {
     "NoahTheDuke/vim-just",
     ft = { "just" },
+  },
+
+  -- Sonarlint
+  {
+    url = "https://gitlab.com/schrieveslaach/sonarlint.nvim.git",
+    dependencies = {
+      "mfussenegger/nvim-jdtls",
+      "williamboman/mason.nvim",
+    },
+    config = function()
+      require("sonarlint").setup({
+        server = {
+          cmd = {
+            mason_dir .. "/bin/sonarlint-language-server",
+            "-stdio",
+            "-analyzers",
+            mason_dir .. "/share/sonarlint-analyzers/sonarjava.jar",
+          },
+        },
+        filetypes = {
+          "java",
+        },
+      })
+    end,
+    ft = {
+      "java",
+    },
   },
 }
