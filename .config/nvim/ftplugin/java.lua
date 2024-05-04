@@ -1,10 +1,15 @@
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 local sdkman_javas = vim.env.HOME .. "/.sdkman/candidates/java/"
+local mason_java = mason_dir
+  .. (
+    vim.fn.has("mac") == 1 and "/packages/openjdk-17/jdk-17.0.2.jdk/Contents/Home/bin/java"
+    or "/packages/openjdk-17/jdk-17.0.2/bin/java"
+  )
 local config = {
   root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
   cmd = {
-    mason_dir .. "/packages/openjdk-17/jdk-17.0.2.jdk/Contents/Home/bin/java",
+    mason_java,
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
