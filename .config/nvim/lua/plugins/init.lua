@@ -140,4 +140,8 @@ return {
       "java",
     },
   },
+
+  -- YAML / JSON schemas
+  -- used for mason-registry
+  "b0o/schemastore.nvim",
 }
