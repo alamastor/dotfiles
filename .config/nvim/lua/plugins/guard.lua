@@ -11,7 +11,7 @@ return {
     ft("sh"):lint("shellcheck")
     ft("java"):fmt({
       cmd = "palantir-java-format",
-      args = { "-" },
+      args = { "--palantir", "-" },
       stdin = true,
     })
     -- Make palantir-java-format work
