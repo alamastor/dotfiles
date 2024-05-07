@@ -53,5 +53,6 @@ local config = {
   init_options = {
     bundles = {},
   },
+  capabilities = { workspace = { fileOperations = { willRename = true } } },
 }
 require("jdtls").start_or_attach(config)
