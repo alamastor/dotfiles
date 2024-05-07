@@ -50,6 +50,7 @@ alias vim=nvim
 alias v=nvim
 alias vdev="cd ~/.config/nvim && v"
 alias zdev="cd && v ~/.zshrc"
+alias ls=eza
 
 function awsauth { ~/Library/aws-auth-bash/auth.sh "$@"; [[ -r "$HOME/.aws/sessiontoken" ]] && . "$HOME/.aws/sessiontoken"; }
 
