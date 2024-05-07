@@ -1,4 +1,3 @@
-mason_dir = vim.fn.stdpath("data") .. "/mason"
 return {
   -- LSP config
   {
@@ -125,10 +124,10 @@ return {
       require("sonarlint").setup({
         server = {
           cmd = {
-            mason_dir .. "/bin/sonarlint-language-server",
+            "sonarlint-language-server",
             "-stdio",
             "-analyzers",
-            mason_dir .. "/share/sonarlint-analyzers/sonarjava.jar",
+            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
           },
         },
         filetypes = {

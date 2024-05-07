@@ -1,15 +1,10 @@
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 local sdkman_javas = vim.env.HOME .. "/.sdkman/candidates/java/"
-local mason_java = mason_dir
-  .. (
-    vim.fn.has("mac") == 1 and "/packages/openjdk-17/jdk-17.0.2.jdk/Contents/Home/bin/java"
-    or "/packages/openjdk-17/jdk-17.0.2/bin/java"
-  )
 local config = {
   root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
   cmd = {
-    mason_java,
+    "java", -- Use Mason installed Java
     "-Declipse.application=org.eclipse.jdt.ls.core.id1",
     "-Dosgi.bundles.defaultStartLevel=4",
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -21,12 +16,12 @@ local config = {
     "java.base/java.util=ALL-UNNAMED",
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
-    "-javaagent:" .. mason_dir .. "/share/lombok-nightly/lombok.jar",
-    "-Xbootclasspath/a:" .. mason_dir .. "/share/lombok-nightly",
+    "-javaagent:" .. vim.fn.expand("$MASON/share/lombok-nightly/lombok.jar"),
+    "-Xbootclasspath/a:" .. vim.fn.expand("$MASON/share/lombok-nightly"),
     "-jar",
-    mason_dir .. "/share/jdtls/plugins/org.eclipse.equinox.launcher.jar",
+    vim.fn.expand("$MASON/share/jdtls/plugins/org.eclipse.equinox.launcher.jar"),
     "-configuration",
-    mason_dir .. "/share/jdtls/config",
+    vim.fn.expand("$MASON/share/jdtls/config"),
     "-data",
     vim.fn.stdpath("cache") .. "/jdtls/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t"),
   },
