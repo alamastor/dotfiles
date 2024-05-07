@@ -1,2 +1,0 @@
-# nvim
-- highlight hovered variables
