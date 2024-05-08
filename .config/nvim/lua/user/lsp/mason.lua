@@ -4,7 +4,6 @@ local servers = {
   "yamlls",
 }
 
-require("user.mason")
 require("mason-lspconfig").setup({
   ensure_installed = servers,
   automatic_installation = true,

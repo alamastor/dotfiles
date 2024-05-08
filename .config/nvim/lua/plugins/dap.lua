@@ -9,7 +9,6 @@ return {
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
-    local mason = require("user.mason")
 
     require("neodev").setup({
       library = { plugins = { "nvim-dap-ui" }, types = true },
@@ -78,6 +77,6 @@ return {
     local dap_python = require("dap-python")
     dap_python.setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
     dap_python.test_runner = "pytest"
-    mason.install_package("debugpy")
+    require("user.common").ensure_mason_installed("debugpy")
   end,
 }

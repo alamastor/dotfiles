@@ -10,9 +10,8 @@ return {
   version = "^3",
   ft = "rust",
   config = function()
-    local mason = require("user.mason")
     local handlers = require("user.lsp.handlers")
-    mason.install_package("codelldb")
+    require("user.common").ensure_mason_installed("codelldb")
 
     vim.g.rustaceanvim = function()
       local cfg = require("rustaceanvim.config")
