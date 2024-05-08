@@ -1,3 +1,12 @@
+require("user.common").ensure_mason_installed({
+  "openjdk-17",
+  "jdtls",
+  "lombok-nightly",
+  "java-debug-adapter",
+  "java-test",
+  "palantir-java-format",
+  "sonarlint-language-server",
+})
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 local sdkman_javas = vim.env.HOME .. "/.sdkman/candidates/java/"
