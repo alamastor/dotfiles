@@ -79,4 +79,6 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, sile
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
 keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { noremap = true, silent = true })
 
+-- Noice
+keymap("n", "<leader>c", "<cmd>Noice dismiss<cr>", { noremap = true, silent = true })
 return M
