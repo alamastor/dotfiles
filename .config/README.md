@@ -1,4 +1,6 @@
-# .files https://yadm.io/
+# .files
+https://yadm.io/
+
 ## TODO
 ### nvim
 * Lower priority for Copilot suggestions
