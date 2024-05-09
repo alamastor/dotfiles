@@ -143,4 +143,7 @@ return {
   -- YAML / JSON schemas
   -- used for mason-registry
   "b0o/schemastore.nvim",
+
+  -- Highlight words
+  "RRethy/vim-illuminate",
 }
