@@ -39,7 +39,7 @@ return {
       "nvim-tree/nvim-tree.lua",
     },
     config = function()
-      require("lsp-file-operations").setup({ debug = true })
+      require("lsp-file-operations").setup()
     end,
   },
 
