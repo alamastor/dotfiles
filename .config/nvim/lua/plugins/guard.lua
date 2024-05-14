@@ -9,6 +9,7 @@ return {
     ft("python"):fmt("ruff"):lint("ruff")
     ft("lua"):fmt("stylua")
     ft("sh"):lint("shellcheck")
+    ft("typescript"):fmt("prettier")
     ft("java"):fmt({
       cmd = "palantir-java-format",
       args = { "--palantir", "-" },
