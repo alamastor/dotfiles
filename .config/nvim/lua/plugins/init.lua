@@ -146,4 +146,13 @@ return {
 
   -- Highlight words
   "RRethy/vim-illuminate",
+
+  -- Quick comment
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
+  },
 }
