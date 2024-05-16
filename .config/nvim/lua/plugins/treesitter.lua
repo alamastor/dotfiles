@@ -19,8 +19,8 @@ return {
         "regex",
         "rust",
         "toml",
-        "vim",
         "typescript",
+        "vim",
       },
       -- ensure_installed = "all", -- one of "all" or a list of languages
       ignore_install = { "" }, -- List of parsers to ignore installing
