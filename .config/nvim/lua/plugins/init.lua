@@ -50,24 +50,6 @@ return {
     opts = {},
   },
 
-  -- Copilot
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    opts = {
-      auto_trigger = true,
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-    },
-    dependencies = {
-      "zbirenbaum/copilot-cmp",
-      config = function()
-        require("copilot_cmp").setup({})
-      end,
-    },
-  },
-
   -- Haskell
   {
     "mrcjkb/haskell-tools.nvim",
