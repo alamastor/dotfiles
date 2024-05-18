@@ -70,8 +70,6 @@ keymap("n", "<leader>lem", remap("extract_method"), { noremap = true, silent = t
 keymap("n", "<leader>li", "<cmd>LspInfo<cr>", { noremap = true, silent = true })
 keymap("n", "<leader>lI", "<cmd>Mason<cr>", { noremap = true, silent = true })
 
-keymap("n", "<leader>cn", "<cmd>Colorscheme next<cr>", { noremap = true, silent = true })
-
 -- Telescope
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
