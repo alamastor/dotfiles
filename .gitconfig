@@ -5,6 +5,15 @@
   pager = delta
   editor = nvim
 
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+
 [interactive]
   diffFilter = delta --color-only
 
@@ -17,6 +26,7 @@
 
 [diff]
   colorMoved = default
+  tool = difftastic
 
 [push]
   default = current
