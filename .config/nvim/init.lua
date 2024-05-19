@@ -3,7 +3,7 @@ vim.loader.enable()
 vim.g.mapleader = " " -- Must do this before anything is mapped with leader
 
 vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus" -- access sytem clipboard
+vim.opt.clipboard = "unnamedplus" -- access system clipboard
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.mouse = "a" -- enable mouse
@@ -33,6 +33,8 @@ vim.opt.listchars = {
 vim.opt.fillchars = {
   eob = " ",
 }
+vim.opt.spell = true
+vim.opt.spelllang = "en_au"
 
 require("user/lazy")
 require("user/globals")
