@@ -3,7 +3,7 @@
 
 [core]
   pager = delta
-  editor = nvr --remote-wait-silent
+  editor = nvim
 
 [interactive]
   diffFilter = delta --color-only

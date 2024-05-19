@@ -12,6 +12,3 @@ if [ "$system_type" = "Darwin" ]; then
   echo "Updating homebrew bundle"
   brew bundle --global
 fi
-
-echo "Installing neovim-remote"
-pip3 install -U neovim-remote

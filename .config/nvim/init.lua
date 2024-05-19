@@ -23,6 +23,7 @@ vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.guifont = "monospace:h17"
 vim.opt.list = true
+vim.opt.title = true -- set the title of the window to the file name
 vim.opt.listchars = {
   tab = ">-",
   trail = "·",
