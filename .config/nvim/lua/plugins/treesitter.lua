@@ -10,6 +10,7 @@ return {
       ensure_installed = {
         "bash",
         "comment",
+        "dockerfile",
         "hcl",
         "java",
         "lua",
