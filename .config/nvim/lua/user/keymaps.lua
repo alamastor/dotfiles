@@ -115,6 +115,7 @@ wk.register({
   ["<leader>h"] = {
     name = "+git",
     S = { ":Gitsigns stage_buffer<CR>", "Git stage buffer" },
+    s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk" },
     u = { ":Gitsigns undo_stage_hunk<CR>", "Git undo stage hunk" },
     R = { ":Gitsigns reset_buffer<CR>", "Git reset buffer" },
     p = { ":Gitsigns preview_hunk<CR>", "Git preview hunk" },
@@ -129,7 +130,7 @@ wk.register({
       function()
         gs.diffthis("~")
       end,
-      "Git open dif with prev commit",
+      "Git open diff with prev commit",
     },
     t = {
       name = "Toggle",
