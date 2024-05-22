@@ -137,4 +137,7 @@ return {
     },
     lazy = false,
   },
+
+  -- Undo tree
+  "mbbill/undotree",
 }

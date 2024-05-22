@@ -178,4 +178,8 @@ wk.register({
   },
 })
 
+wk.register({
+  ["<leader>t"] = { name = "+toggle", u = { ":UndotreeToggle<CR>", "Toggle Undotree" } },
+})
+
 return M
