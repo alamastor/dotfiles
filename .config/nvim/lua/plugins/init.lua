@@ -140,4 +140,11 @@ return {
 
   -- Undo tree
   "mbbill/undotree",
+
+  -- Gimme a hard time
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {},
+  },
 }

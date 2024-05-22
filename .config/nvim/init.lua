@@ -36,6 +36,8 @@ vim.opt.fillchars = {
 vim.opt.spell = true
 vim.opt.spelllang = "en_au"
 vim.opt.spellcapcheck = ""
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 require("user/lazy")
 require("user/globals")
