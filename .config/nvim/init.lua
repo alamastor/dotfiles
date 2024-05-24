@@ -38,6 +38,7 @@ vim.opt.spelllang = "en_au"
 vim.opt.spellcapcheck = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.scrolloff = 10
 
 require("user/lazy")
 require("user/globals")
