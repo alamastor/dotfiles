@@ -115,7 +115,6 @@ wk.register({
   ["<leader>h"] = {
     name = "+git",
     S = { ":Gitsigns stage_buffer<CR>", "Git stage buffer" },
-    s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk" },
     u = { ":Gitsigns undo_stage_hunk<CR>", "Git undo stage hunk" },
     R = { ":Gitsigns reset_buffer<CR>", "Git reset buffer" },
     p = { ":Gitsigns preview_hunk<CR>", "Git preview hunk" },
@@ -137,9 +136,9 @@ wk.register({
       b = { ":Gitsigns toggle_current_line_blame<CR>", "Git toggle blame" },
       d = { ":Gitsigns toggle_deleted<CR>", "Git toggle deleted" },
     },
+    s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk", mode = { "v", "n" } },
+    r = { ":Gitsigns reset_hunk<CR>", "Git reset hunk", mode = { "v", "n" } },
   },
-  s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk", mode = { "v", "n" } },
-  r = { ":Gitsigns reset_hunk<CR>", "Git reset hunk", mode = { "v", "n" } },
 })
 
 -- Navigation
