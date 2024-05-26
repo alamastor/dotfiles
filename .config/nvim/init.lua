@@ -39,6 +39,7 @@ vim.opt.spellcapcheck = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
+vim.g.python3_host_prog = vim.fn.stdpath("cache") .. "/pyvenv/bin/python"
 
 require("user/lazy")
 require("user/globals")
