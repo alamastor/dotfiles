@@ -12,7 +12,7 @@ return {
     ft("typescript"):fmt("prettier")
     ft("java"):fmt({
       cmd = "palantir-java-format",
-      args = { "--palantir", "-" },
+      args = { "--skip-reflowing-long-strings", "--palantir", "-" },
       stdin = true,
     })
     -- Make palantir-java-format work
