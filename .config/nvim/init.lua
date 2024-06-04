@@ -36,6 +36,7 @@ vim.opt.fillchars = {
 vim.opt.spell = true
 vim.opt.spelllang = "en_au"
 vim.opt.spellcapcheck = ""
+vim.opt.spelloptions = "camel"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
