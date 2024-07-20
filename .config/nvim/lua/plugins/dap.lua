@@ -76,6 +76,11 @@ return {
     -- Python
     local dap_python = require("dap-python")
     dap_python.setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
+    table.insert(require("dap").configurations.python, {
+      type = "python",
+      request = "launch",
+      justMyCode = false,
+    })
     dap_python.test_runner = "pytest"
     require("user.common").ensure_mason_installed("debugpy")
   end,
