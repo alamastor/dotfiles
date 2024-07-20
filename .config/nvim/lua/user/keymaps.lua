@@ -30,156 +30,176 @@ M.reload = function()
   R("user.keymaps")
   print("Keymaps reloaded.")
 end
-wk.register({
-  ["<leader>r"] = {
-    name = "+reload",
-    r = { "<cmd>lua require('user.keymaps').reload()<cr>", "Reload Keymaps" },
-  },
+wk.add({
+  { "<leader>r", group = "reload" },
+  { "<leader>rr", "<cmd>lua require('user.keymaps').reload()<cr>", desc = "Reload Keymaps" },
 })
 
 -- NvimTree
-wk.register({ ["<leader>e"] = { ":NvimTreeToggle<CR>", "Toggle Nvim Tree" } })
+wk.add({
+  { "<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle Nvim Tree" },
+})
 
 -- DAP
-wk.register({
-  ["<leader>d"] = {
-    name = "+dap",
-    b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "DAP toggle breakpoint" },
-    c = { "<cmd>lua require'dap'.continue()<cr>", "DAP continue" },
-    i = { "<cmd>lua require'dap'.step_into()<cr>", "DAP step into" },
-    o = { "<cmd>lua require'dap'.step_over()<cr>", "DAP step over" },
-    O = { "<cmd>lua require'dap'.step_out()<cr>", "DAP step out" },
-    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "DAP toggle REPL" },
-    l = { "<cmd>lua require'dap'.run_last()<cr>", "DAP run last" },
-    u = { "<cmd>lua require'dapui'.toggle()<cr>", "DAP toggle UI" },
-    t = { "<cmd>lua require'dap'.terminate()<cr>", "DAP terminate" },
-    n = { remap("test_method"), "DAP test method" },
-  },
+wk.add({
+  { "<leader>d", group = "dap" },
+  { "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", desc = "DAP step out" },
+  { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "DAP toggle breakpoint" },
+  { "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", desc = "DAP continue" },
+  { "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", desc = "DAP step into" },
+  { "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", desc = "DAP run last" },
+  { "<leader>dn", "<cmd>lua R('user.keymaps').bind('test_method')<cr>", desc = "DAP test method" },
+  { "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", desc = "DAP step over" },
+  { "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", desc = "DAP toggle REPL" },
+  { "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", desc = "DAP terminate" },
+  { "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", desc = "DAP toggle UI" },
 })
 
-wk.register({ K = { remap("documentation"), "LSP docs" } })
-
-wk.register({
-  g = {
-    name = "+goto",
-    D = { remap("go_to_declaration"), "Goto declaration" },
-    d = { remap("go_to_definition"), "Goto definition" },
-    i = { remap("implementation"), "Goto implementation" },
-    r = { remap("references"), "Goto references" },
-    l = { remap("diagnostic"), "Goto diagnostics" },
-  },
+wk.add({
+  { "K", "<cmd>lua R('user.keymaps').bind('documentation')<cr>", desc = "LSP docs" },
 })
 
-wk.register({
-  ["<leader>l"] = {
-    name = "+lsp",
-    f = { remap("format_file"), "LSP format file" },
-    a = { remap("code_action"), "LSP code action" },
-    j = { remap("next_diagnostic"), "LSP next diagnostic" },
-    k = { remap("prev_diagnostic"), "LSP prev diagnostic" },
-    r = { remap("rename"), "Rename" },
-    s = { remap("signature_help"), "LSP signature help" },
-    o = { remap("organize_imports"), "LSP organise imports" },
-    e = {
-      name = "+extract",
-      v = { remap("extract_variable"), "LSP extract variable" },
-      c = { remap("extract_constant"), "LSP extract constant" },
-      m = { remap("extract_method"), "LSP extract method" },
-    },
-    i = { "<cmd>LspInfo<cr>", "LSP info" },
-    I = { "<cmd>Mason<cr>", "Mason" },
+wk.add({
+  { "g", group = "goto" },
+  { "gD", "<cmd>lua R('user.keymaps').bind('go_to_declaration')<cr>", desc = "Goto declaration" },
+  { "gd", "<cmd>lua R('user.keymaps').bind('go_to_definition')<cr>", desc = "Goto definition" },
+  { "gi", "<cmd>lua R('user.keymaps').bind('implementation')<cr>", desc = "Goto implementation" },
+  { "gl", "<cmd>lua R('user.keymaps').bind('diagnostic')<cr>", desc = "Goto diagnostics" },
+  { "gr", "<cmd>lua R('user.keymaps').bind('references')<cr>", desc = "Goto references" },
+})
+
+wk.add({
+  { "<leader>l", group = "lsp" },
+  { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason" },
+  { "<leader>la", "<cmd>lua R('user.keymaps').bind('code_action')<cr>", desc = "LSP code action" },
+  { "<leader>le", group = "extract" },
+  {
+    "<leader>lec",
+    "<cmd>lua R('user.keymaps').bind('extract_constant')<cr>",
+    desc = "LSP extract constant",
+  },
+  {
+    "<leader>lem",
+    "<cmd>lua R('user.keymaps').bind('extract_method')<cr>",
+    desc = "LSP extract method",
+  },
+  {
+    "<leader>lev",
+    "<cmd>lua R('user.keymaps').bind('extract_variable')<cr>",
+    desc = "LSP extract variable",
+  },
+  { "<leader>lf", "<cmd>lua R('user.keymaps').bind('format_file')<cr>", desc = "LSP format file" },
+  { "<leader>li", "<cmd>LspInfo<cr>", desc = "LSP info" },
+  {
+    "<leader>lj",
+    "<cmd>lua R('user.keymaps').bind('next_diagnostic')<cr>",
+    desc = "LSP next diagnostic",
+  },
+  {
+    "<leader>lk",
+    "<cmd>lua R('user.keymaps').bind('prev_diagnostic')<cr>",
+    desc = "LSP prev diagnostic",
+  },
+  {
+    "<leader>lo",
+    "<cmd>lua R('user.keymaps').bind('organize_imports')<cr>",
+    desc = "LSP organise imports",
+  },
+  { "<leader>lr", "<cmd>lua R('user.keymaps').bind('rename')<cr>", desc = "Rename" },
+  {
+    "<leader>ls",
+    "<cmd>lua R('user.keymaps').bind('signature_help')<cr>",
+    desc = "LSP signature help",
   },
 })
 
 -- Telescope
-wk.register({
-  ["<leader>f"] = {
-    name = "+telescope",
-    b = { "<cmd>Telescope buffers<cr>", "Telescope buffers" },
-    g = { "<cmd>Telescope live_grep<cr>", "Telescope grep" },
-    h = { "<cmd>Telescope help_tags<cr>", "Telescope help" },
-    f = { "<cmd>Telescope find_files<cr>", "Telescope files" },
-    d = { "<cmd>Telescope diagnostics<cr>", "Telescope diagnostics" },
-    r = { "<cmd>Telescope resume<cr>", "Telescope resume" },
-    j = { "<cmd>Telescope jumplist<cr>", "Telescope jumplist" },
-    t = { name = "+git", f = { "<cmd>Telescope git_files<cr>", "Telescope Git files" } },
-  },
+wk.add({
+  { "<leader>f", group = "telescope" },
+  { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Telescope buffers" },
+  { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Telescope diagnostics" },
+  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Telescope files" },
+  { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Telescope grep" },
+  { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help" },
+  { "<leader>fj", "<cmd>Telescope jumplist<cr>", desc = "Telescope jumplist" },
+  { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Telescope resume" },
+  { "<leader>ft", group = "git" },
+  { "<leader>ftf", "<cmd>Telescope git_files<cr>", desc = "Telescope Git files" },
 })
 
 -- Noice
-wk.register({ ["<leader>c"] = { "<cmd>Noice dismiss<cr>", "Noice dismiss" } })
+wk.add({
+  { "<leader>c", "<cmd>Noice dismiss<cr>", desc = "Noice dismiss" },
+})
 
 -- Git
 local gs = require("gitsigns")
-wk.register({
-  ["<leader>h"] = {
-    name = "+git",
-    S = { ":Gitsigns stage_buffer<CR>", "Git stage buffer" },
-    u = { ":Gitsigns undo_stage_hunk<CR>", "Git undo stage hunk" },
-    R = { ":Gitsigns reset_buffer<CR>", "Git reset buffer" },
-    p = { ":Gitsigns preview_hunk<CR>", "Git preview hunk" },
-    b = {
-      function()
-        gs.blame_line({ full = true })
-      end,
-      "Git blame line",
-    },
-    d = { ":Gitsigns diffthis<CR>", "Git open diff" },
-    D = {
-      function()
-        gs.diffthis("~")
-      end,
-      "Git open diff with prev commit",
-    },
-    t = {
-      name = "Toggle",
-      b = { ":Gitsigns toggle_current_line_blame<CR>", "Git toggle blame" },
-      d = { ":Gitsigns toggle_deleted<CR>", "Git toggle deleted" },
-    },
-    s = { ":Gitsigns stage_hunk<CR>", "Git stage hunk", mode = { "v", "n" } },
-    r = { ":Gitsigns reset_hunk<CR>", "Git reset hunk", mode = { "v", "n" } },
+wk.add({
+  { "<leader>h", group = "git" },
+  {
+    "<leader>hD",
+    function()
+      gs.diffthis("~")
+    end,
+    desc = "Git open diff with prev commit",
   },
+  { "<leader>hR", ":Gitsigns reset_buffer<CR>", desc = "Git reset buffer" },
+  { "<leader>hS", ":Gitsigns stage_buffer<CR>", desc = "Git stage buffer" },
+  {
+    "<leader>hb",
+    function()
+      gs.blame_line({ full = true })
+    end,
+    desc = "Git blame line",
+  },
+  { "<leader>hd", ":Gitsigns diffthis<CR>", desc = "Git open diff" },
+  { "<leader>hp", ":Gitsigns preview_hunk<CR>", desc = "Git preview hunk" },
+  { "<leader>ht", group = "Toggle" },
+  { "<leader>htb", ":Gitsigns toggle_current_line_blame<CR>", desc = "Git toggle blame" },
+  { "<leader>htd", ":Gitsigns toggle_deleted<CR>", desc = "Git toggle deleted" },
+  { "<leader>hu", ":Gitsigns undo_stage_hunk<CR>", desc = "Git undo stage hunk" },
+  { "<leader>hr", ":Gitsigns reset_hunk<CR>", desc = "Git reset hunk", mode = { "n", "v" } },
+  { "<leader>hs", ":Gitsigns stage_hunk<CR>", desc = "Git stage hunk", mode = { "n", "v" } },
 })
 
 -- Navigation
-wk.register({
-  ["]"] = {
-    name = "+next",
-    c = {
-      function()
-        if vim.wo.diff then
-          return "]c"
-        end
-        vim.schedule(function()
-          gs.next_hunk()
-        end)
-        return "<Ignore>"
-      end,
-      "Next Git hunk",
-    },
+wk.add({
+  { "]", group = "next" },
+  {
+    "]c",
+    function()
+      if vim.wo.diff then
+        return "]c"
+      end
+      vim.schedule(function()
+        gs.next_hunk()
+      end)
+      return "<Ignore>"
+    end,
+    desc = "Next Git hunk",
   },
 })
 
-wk.register({
-  ["["] = {
-    name = "+prev",
-    c = {
-      function()
-        if vim.wo.diff then
-          return "[c"
-        end
-        vim.schedule(function()
-          gs.prev_hunk()
-        end)
-        return "<Ignore>"
-      end,
-      "Prev Git hunk",
-    },
+wk.add({
+  { "[", group = "prev" },
+  {
+    "[c",
+    function()
+      if vim.wo.diff then
+        return "[c"
+      end
+      vim.schedule(function()
+        gs.prev_hunk()
+      end)
+      return "<Ignore>"
+    end,
+    desc = "Prev Git hunk",
   },
 })
 
-wk.register({
-  ["<leader>t"] = { name = "+toggle", u = { ":UndotreeToggle<CR>", "Toggle Undotree" } },
+wk.add({
+  { "<leader>t", group = "toggle" },
+  { "<leader>tu", ":UndotreeToggle<CR>", desc = "Toggle Undotree" },
 })
 
 return M
