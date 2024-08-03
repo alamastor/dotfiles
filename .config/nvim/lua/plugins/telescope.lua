@@ -13,6 +13,13 @@ return {
           "--column",
           "--smart-case",
         },
+        -- Make Git integration work with YADM
+        git_worktrees = {
+          {
+            gitdir = vim.env.HOME .. "/.local/share/yadm/repo.git",
+            toplevel = vim.env.HOME,
+          },
+        },
       },
       extensions = {
         ["ui-select"] = {
