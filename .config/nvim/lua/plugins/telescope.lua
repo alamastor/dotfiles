@@ -21,6 +21,19 @@ return {
           },
         },
       },
+      pickers = {
+        find_files = {
+          find_command = {
+            "rg",
+            "--files",
+            "--color",
+            "never",
+            "--hidden",
+            "--glob",
+            "!**/.git/*",
+          },
+        },
+      },
       extensions = {
         ["ui-select"] = {
           require("telescope.themes").get_dropdown({}),
