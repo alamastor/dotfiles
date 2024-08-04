@@ -2,6 +2,9 @@ return {
   "nvimdev/guard.nvim",
   dependencies = {
     "nvimdev/guard-collection",
+    -- Mason adds it's bin directory to the PATH, guard will error if one of its
+    -- tools are not found when it starts, so need to do this first
+    "williamboman/mason.nvim",
   },
   config = function()
     local ft = require("guard.filetype")
