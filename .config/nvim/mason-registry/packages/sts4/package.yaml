@@ -14,9 +14,9 @@ categories:
   - LSP
 
 source:
-  id: pkg:github/spring-projects/sts4@4.20.1.RELEASE
-  asset:
-    file: vscode-spring-boot-1.50.0-RC.2.vsix
+  id: pkg:openvsx/VMware/vscode-spring-boot@1.56.0
+  download:
+    file: VMware.vscode-spring-boot-{{version}}.vsix
 
 share:
-  sts4/: extension/jars/
+  spring-boot-tools/: extension/jars/
