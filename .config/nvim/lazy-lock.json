@@ -47,6 +47,7 @@
   "schemastore.nvim": { "branch": "main", "commit": "6ba091a30616aadeda531c7f27dfad263303f55d" },
   "snazzybuddy.nvim": { "branch": "main", "commit": "8e2c2c8392cba9200c643e837c56de79b744df34" },
   "sonarlint.nvim": { "branch": "main", "commit": "e2a44717af984114fd7da0d5e084240ef269f088" },
+  "spring-boot.nvim": { "branch": "main", "commit": "5146bfe064e4d6aa0670df2c64f9609394d534ef" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "3b1600d0fd5172ad9fae00987362ca0ef3d8895d" },
   "transparent.nvim": { "branch": "main", "commit": "2c78d94448b534c35ca1d88a3bae90b1cd1a3d4d" },

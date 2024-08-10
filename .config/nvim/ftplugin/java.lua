@@ -6,6 +6,7 @@ require("user.common").ensure_mason_installed({
   "java-test",
   "palantir-java-format",
   "sonarlint-language-server",
+  "sts4",
 })
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -54,9 +55,16 @@ local config = {
   init_options = {
     bundles = vim.list_extend(
       { vim.fn.expand("$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar") },
-      vim.split(vim.fn.glob("$MASON/share/java-test/*.jar", true), "\n")
+      vim.list_extend(
+        vim.split(vim.fn.glob("$MASON/share/java-test/*.jar", true), "\n"),
+        vim.split(vim.fn.glob("$MASON/share/spring-boot-tools/*.jar", true), "\n")
+      )
     ),
   },
   capabilities = { workspace = { fileOperations = { willRename = true } } },
 }
 require("jdtls").start_or_attach(config)
+require("spring_boot").setup({
+  ls_path = vim.fn.expand("$MASON/packages/sts4/extension/language-server"),
+  java_cmd = "java",
+})
