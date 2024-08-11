@@ -74,4 +74,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 if [ "${system_type}" = "Linux" ]; then
   export LD_LIBRARY_PATH=$HOME/.local/lib/arch-mojo:$LD_LIBRARY_PATH
+elif [ "${system_type}" = "Darwin" ]; then
+  export MODULAR_HOME="~/.modular"
+  export PATH="~/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 fi
