@@ -4,4 +4,5 @@ require("gruvbox").setup({
   contrast = "soft",
 })
 
-require("colorbuddy").colorscheme("snazzybuddy")
+-- require("colorbuddy").colorscheme("snazzybuddy")
+vim.cmd("colorscheme rose-pine")

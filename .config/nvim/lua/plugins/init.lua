@@ -12,6 +12,7 @@ return {
   -- Color schemes
   "ellisonleao/gruvbox.nvim",
   "zanglg/nova.nvim",
+  { "rose-pine/neovim", name = "rose-pine" },
   { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
   "bbenzikry/snazzybuddy.nvim",
 
