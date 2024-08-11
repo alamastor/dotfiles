@@ -8,6 +8,7 @@ return {
       auto_trigger = true,
       suggestion = { enabled = false },
       panel = { enabled = false },
+      filetypes = { yaml = true },
     },
     dependencies = {
       "zbirenbaum/copilot-cmp",

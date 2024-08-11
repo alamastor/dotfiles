@@ -200,6 +200,7 @@ wk.add({
 wk.add({
   { "<leader>t", group = "toggle" },
   { "<leader>tu", ":UndotreeToggle<CR>", desc = "Toggle Undotree" },
+  { "<leader>tp", ":Copilot toggle<CR>", desc = "Toggle Copilot" },
 })
 
 return M
