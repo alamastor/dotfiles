@@ -78,3 +78,9 @@ elif [ "${system_type}" = "Darwin" ]; then
   export MODULAR_HOME="~/.modular"
   export PATH="~/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 fi
+
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+if [ "${system_type}" = "Darwin" ]; then
+  complete -C aws_completer aws
+fi
