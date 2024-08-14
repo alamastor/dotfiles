@@ -76,8 +76,35 @@ return {
     -- Python
     local dap_python = require("dap-python")
     dap_python.setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python")
-    table.insert(require("dap").configurations.python, {
+    local python_configs = require("dap").configurations.python
+    for _, config in ipairs(python_configs) do
+      config.justMyCode = false
+    end
+
+    -- Used by the search simulator debug config. Global, so it can be
+    -- called from the completion function
+    ---@diagnostic disable-next-line: lowercase-global
+    search_runs = function()
+      local runs = {}
+      for _, path_str in ipairs(vim.fn.split(vim.fn.glob("local_results/**/settings.json"), "\n")) do
+        if string.sub(path_str, 1, 24) ~= "local_results/artifacts/" then
+          table.insert(runs, string.sub(path_str, 15, -15))
+        end
+      end
+      return runs
+    end
+
+    table.insert(python_configs, {
+      name = "Search Simulator",
       type = "python",
+      module = "pipelines.simulation.run_pipeline",
+      args = function()
+        local run = vim.fn.input({
+          prompt = "Run: ",
+          completion = "customlist,v:lua.search_runs",
+        })
+        return { "--pipeline-dir", "local_results", "--run", run }
+      end,
       request = "launch",
       justMyCode = false,
     })
