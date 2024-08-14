@@ -16,16 +16,6 @@ return {
   { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
   "bbenzikry/snazzybuddy.nvim",
 
-  -- Minimap
-  {
-    "echasnovski/mini.nvim",
-    config = function()
-      local minimap = require("mini.map")
-      minimap.setup()
-      minimap.open()
-    end,
-  },
-
   -- Diagnostics
   {
     "folke/trouble.nvim",
