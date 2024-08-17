@@ -7,7 +7,6 @@ local liblldb_path = extension_path
   .. (this_os == "Linux" and ".so" or ".dylib")
 return {
   "mrcjkb/rustaceanvim",
-  version = "^3",
   ft = "rust",
   config = function()
     local handlers = require("user.lsp.handlers")
