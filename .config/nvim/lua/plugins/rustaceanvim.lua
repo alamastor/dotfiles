@@ -7,42 +7,22 @@ local liblldb_path = extension_path
   .. (this_os == "Linux" and ".so" or ".dylib")
 return {
   "mrcjkb/rustaceanvim",
-  ft = "rust",
+  version = "^5",
+  lazy = false,
   config = function()
-    local handlers = require("user.lsp.handlers")
     require("user.common").ensure_mason_installed("codelldb")
 
-    vim.g.rustaceanvim = function()
-      local cfg = require("rustaceanvim.config")
-      return {
-        server = {
-          on_attach = handlers.on_attach,
-        },
-        settings = {
-          ["rust-analyzer"] = {
-            imports = {
-              granularity = {
-                group = "module",
-              },
-              prefix = "self",
-            },
-            cargo = {
-              buildScripts = {
-                enable = true,
-              },
-            },
-            procMacro = {
-              enable = true,
-            },
-            check = {
-              command = "clippy",
-            },
+    vim.g.rustaceanvim = {
+      settings = {
+        ["rust-analyzer"] = {
+          check = {
+            command = "clippy",
           },
         },
-        dap = {
-          adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-      }
-    end
+      },
+      dap = {
+        adapter = require("rustaceanvim.config").get_codelldb_adapter(codelldb_path, liblldb_path),
+      },
+    }
   end,
 }
