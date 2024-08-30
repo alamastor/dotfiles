@@ -5,7 +5,11 @@ local config = wezterm.config_builder()
 config.color_scheme = "Rosé Pine (Gogh)"
 
 config.font = wezterm.font({ family = "FiraCode NFM" })
-config.font_size = 13.0
+if wezterm.hostname() == "al-arch" then
+	config.font_size = 11.0
+else
+	config.font_size = 13.0
+end
 
 config.enable_wayland = false
 
