@@ -2,7 +2,7 @@ local servers = {
   "lua_ls",
   "pyright",
   "yamlls",
-  "tsserver",
+  "ts_ls",
 }
 
 require("mason-lspconfig").setup({
