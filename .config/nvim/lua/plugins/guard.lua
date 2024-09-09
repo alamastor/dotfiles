@@ -18,6 +18,7 @@ return {
       args = { "--skip-reflowing-long-strings", "--palantir", "-" },
       stdin = true,
     })
+    ft("rust"):fmt("rustfmt")
     -- Make palantir-java-format work
     vim.env.PALANTIR_JAVA_FORMAT_OPTS = (
       "--add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED "
