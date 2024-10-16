@@ -19,17 +19,6 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-export PYENV_ROOT="$HOME/.pyenv"
-if [ "${system_type}" = "Linux" ]; then
-  export PATH=$HOME/.pyenv/bin:$PATH
-fi
-if [ "$SHLVL" = 1 ]; then
-  if command -v pyenv >/dev/null; then
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-  fi
-fi
-
 # FZF
 if [ "${system_type}" = "Linux" ]; then
   . /usr/share/fzf/key-bindings.zsh
