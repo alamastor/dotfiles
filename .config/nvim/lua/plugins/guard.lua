@@ -28,9 +28,9 @@ return {
       .. "--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED"
     )
 
-    require("guard").setup({
+    vim.g.guard_config = {
       fmt_on_save = true,
       lsp_as_default_formatter = true,
-    })
+    }
   end,
 }
