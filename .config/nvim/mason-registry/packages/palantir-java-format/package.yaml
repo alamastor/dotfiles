@@ -10,17 +10,17 @@ categories:
   - Formatter
 
 source:
-  id: pkg:github/palantir/palantir-java-format@2.46.0
+  id: pkg:github/palantir/palantir-java-format@2.51.0
   build:
     target:
       - darwin_arm64
       - darwin_x64
       - linux
     run: >
-      export CIRCLE_TAG=2.46.0 &&
+      export CIRCLE_TAG=2.51.0 &&
       ./gradlew --no-daemon :palantir-java-format:assemble &&
-      tar -xvf palantir-java-format/build/distributions/palantir-java-format-2.46.0.tar
-    bin: palantir-java-format-2.46.0/bin/palantir-java-format
+      tar -xvf palantir-java-format/build/distributions/palantir-java-format-2.51.0.tar
+    bin: palantir-java-format-2.51.0/bin/palantir-java-format
 
 bin:
   palantir-java-format: "{{ source.build.bin }}"
